@@ -1,0 +1,23 @@
+1. Retrieve all professors whose research interest is computer vision and machine learning.
+
+SELECT prof_name FROM (SELECT * from professorinterests WHERE interest = 'computer vision' or interest = 'machine learning') AS filteredprof NATURAL JOIN professor;
+
+2. Retrieve all phd students who are working on project title "Methods of Computation".
+SELECT * FROM students_works_on NATURAL JOIN (SELECT * FROM student WHERE prog_name = 'phd') NATURAL JOIN project where proj_name = 'Methods of Computation'
+
+3. Retrieve all mtech students who worked with professor PM Jat in summer 2015.
+SELECT * FROM student NATURAL JOIN student_works_on NATURAL JOIN professor WHERE prog_name = 'mtech' AND professor_name = 'PM Jat' AND start_date <= '2015-05-01' AND end_date >= '2015-07-31';
+
+
+4. Retrieve all btech students with cpi>9 who have worked in gupta lab in 2016.
+SELECT * FROM student NATURAL JOIN student_works_on SELECT * FROM research_lab AS lab INNER JOIN professor AS prof ON lab.headed_by = prof.prof_id WHERE name = 'gupta lab' 
+
+
+5. Retrieve all students who have worked with at least three professors.
+SELECT * FROM student NATURAL JOIN (SELECT sid, prof_count FROM (SELECT UNIQUE(sid, guided_by) FROM student_works_on) GROUP BY sid HAVING prof_count >= 3);  
+
+
+11. Find out the dominant research area of the institute (Dominant research area is the area in which maximum projects are ongoing or have been completed. Stalled and upcoming projects are not counted.).
+SELECT proj_domain, proj_count FROM project WHERE status = 'completed' OR status = 'in progress' GROUP BY proj_domain
+
+12.

@@ -1,0 +1,23 @@
+Database Title: Database facilitating student-professor research interaction.
+
+Motivation: We believe that necessity is the mother of invention. We decided to draw upon our own needs and experiences to make
+a realistic project capturing all real world entities and constraints. The goal is to make a product which will actually be useful to the 
+interested parties.
+            We are a group of Third Year students wishing to pursue higher education in future. We thus are always on the lookout of research oppurtunities at our institute. However the information is hard to get, often scattered, not monitored or updated frequently. Also, professors who have a good project might be on the lookout for interested students but might find it difficult to actually recruit students. Our goal is to make a robust yet intuitive Database which will be a centralized, reliable, up-to-date system to facilitate interaction amongst undergraduate, master and Ph.D students and professors. 
+
+Scope of Database:
+The database will have entities like students interested in research, Professors, their projects and publications. The database must make it easier for students to access projects related to their research interests and Professors should be able to keep their research work upto date and find deserving candidates quickly.
+
+ 
+Description:
+There will be many projects related to different research areas. Each project must have a guide. Additionally, the project can be associated with a research lab or a company. Also, the project entity will contain information like title, field, start date, tagetted end date and status (completed, upcoming, inprogress, stalled). There can be certain publications related to a project. The other important entity will be a professor entity. It will give information abou professor's field of work, their research interests and other general information. There would be start and end dates to define the association of professor with the project. Students might approach the professors to work on particular projects. The database should contain related information about students(specifically interested in research work), their general information, background, research interests and skill set. Student must have a faculty mentor for the project. There would again be start and end dates to define the association of a student with a project. One of the most important associations in our problem is that between a student and the professor.
+Other important relations include research labs which might be focussed on specific fields, publications which might be done by professors and students and may be based on projects on which they are working. There will be many works_on relations, especially student_works_on and professor_works_on relations which will emulate the students and professors working on certain projects. 
+
+
+Possible extensions:
+For now we limit ourselves to information about a single university. Later we might generalize this to several universities. Including several universities inherently implies that we must incorporate multipe departments in our schema. We also plan to model the relationship between a professor and a client company(for consultancy), competitions, conferences, etc.
+Adding information about alumni for e.g university joined after graduation will be very useful for research oriented students.
+
+Sample Queries:
+
+

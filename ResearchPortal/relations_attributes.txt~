@@ -1,0 +1,19 @@
+Student(sid, sname, prog_name, batch, cpi, interests(fk: fields), skills)
+
+student_works_on(project_id, sid, start_date, end_date, super_id)
+
+Fields()
+
+Skills(languages, tools, technology)
+
+Professor(prof_id, prof_name, interests, department, designation)
+
+professor_works_on(project_id, professor_id, start_date, end_date, super_id)
+
+department(deptid, dept_name)
+
+Project(project_id, pname, department, field, inception_date, conclusion_date, lab, status)
+
+research_lab(rlab_id, name, head_prof_id, phd_super_id)
+
+Publication(prof_id, publication_name, date, field, conference, type)
